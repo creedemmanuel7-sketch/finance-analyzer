@@ -46,7 +46,7 @@ void ajouterTransaction() {
     fprintf(fichier, "%s;%.2f;%s\n", t.categorie, t.montant, t.date);
     fclose(fichier);
 
-    printf("✔️ Depense enregistree avec succes !\n");
+    printf(" Depense enregistree avec succes !\n");
 }
 
 void analyserDonnees() {
@@ -80,7 +80,7 @@ void analyserDonnees() {
             count++;
             printf("%-12s | %-15s | %.2f FCFA\n", t.date, t.categorie, t.montant);
         } else {
-            printf("⚠️ Ligne malformee ignoree : %s\n", ligne);
+            printf(" Ligne malformee ignoree : %s\n", ligne);
         }
     }
 
@@ -91,7 +91,7 @@ void analyserDonnees() {
         printf("Moyenne            : %.2f FCFA\n", total / count);
         printf("Plus gros achat    : %.2f FCFA (%s)\n", max_montant, max_cat);
         
-        if (total > 60000) printf("\n🚩 BUDGET DEPASSE ! (Seuil 60,000)\n");
+        if (total > 60000) printf("\n BUDGET DEPASSE ! (Seuil 60,000)\n");
     }
     fclose(fichier);
 }
